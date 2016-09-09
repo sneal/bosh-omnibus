@@ -5,8 +5,11 @@
 #
 
 name "bosh"
-maintainer "CHANGE ME"
-homepage "https://CHANGE-ME.com"
+maintainer "Shawn Neal"
+homepage "https://github.com/sneal/bosh-omnibus"
+package :msi do
+  upgrade_code '9a58a128-6488-4c9e-8965-1ef03f058d2c'
+end
 
 # Defaults to C:/bosh on Windows
 # and /opt/bosh on all other platforms
@@ -19,7 +22,8 @@ build_iteration 1
 dependency "preparation"
 
 # bosh dependencies/components
-# dependency "somedep"
+dependency "ruby"
+dependency "ruby-windows-devkit"
 
 # Version manifest file
 dependency "version-manifest"

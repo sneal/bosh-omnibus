@@ -44,8 +44,7 @@
 
 # Load additional software
 # ------------------------------
-# software_gems ['omnibus-software', 'my-company-software']
-# local_software_dirs ['/path/to/local/software']
+software_gems %w(omnibus-software)
 
 # Windows architecture defaults
 # ------------------------------

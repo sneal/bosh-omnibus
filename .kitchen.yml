@@ -6,10 +6,13 @@ driver:
     memory: 2048
   synced_folders:
     - ['.', '/home/vagrant/bosh']
+  provider: virtualbox
+  gui: true
+  username: vagrant
+  password: vagrant
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: 12.4.1
 
 platforms:
   - name: centos-7.1
@@ -32,13 +35,16 @@ platforms:
     run_list: apt::default
   - name: ubuntu-12.04
     run_list: apt::default
+  - name: windows2012r2
+    driver:
+      box: windows2012r2
 
 suites:
   - name: default
     run_list: omnibus::default
     attributes:
       omnibus:
-        build_user:          vagrant
-        build_user_group:    vagrant
-        build_user_password: vagrant
+        build_user:          omnibus
+        build_user_group:    omnibusgrp
+        build_user_password: Ksd8omn!Bus37FTW
         install_dir:         /opt/bosh
